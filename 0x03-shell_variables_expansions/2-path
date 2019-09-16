@@ -1,2 +1,2 @@
 #!/bin/bash
-export PATH=$PATH:/0x03-shell_variables_expansions
+export PATH=$PATH:$PWD
