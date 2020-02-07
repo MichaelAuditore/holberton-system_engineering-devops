@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times using a while loop
 # and print "Hi" when its nine
-i=-5
-while [ $i -lt 5 ]
+i=0
+while [ $i -lt 10 ]
 do
-    if [ $i -eq 3 ]
+    if [ $i -eq 8 ]
     then
+	echo "Holberton School"
 	echo "Hi"
     else
 	echo "Holberton School"
