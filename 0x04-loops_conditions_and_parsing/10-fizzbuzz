@@ -15,15 +15,17 @@ do
 	if ((i % 5 == 0))
 	then
 	    echo "FizzBuzz"
+	else
+	    echo "Fizz"
 	fi
-	echo "Fizz"
     elif ((i % 5 == 0))
     then
 	if ((i % 3 == 0))
 	then
 	    echo "FizzBuzz"
+	else
+	    echo "Buzz"
 	fi
-	echo "Buzz"
     else
 	echo "$i"
     fi
