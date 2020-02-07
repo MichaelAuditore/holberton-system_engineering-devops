@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script print a string 10 times using a until
+i=-5
+
+until [ $i -gt 4 ]
+do
+  echo "Holberton School"
+  ((i++))
+done
