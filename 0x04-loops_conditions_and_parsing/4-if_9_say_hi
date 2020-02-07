@@ -4,11 +4,11 @@
 i=-5
 while [ $i -lt 5 ]
 do
-    if [ $i == 3 ]
+    if [ $i -eq 3 ]
     then
 	echo "Hi"
     else
-	echo "Holberton School";
+	echo "Holberton School"
     fi
     ((i++))
 done
