@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# read the file etc/passwd and show only the username
+# user id, and home directory path for the user
+file="/etc/passwd"
+
+while IFS=: read -r username password userid groupid useridinfo homedir cmdshell
+do
+  echo -n "The user $username is part of the $groupid gang, lives in $homedir "
+  echo -n "and rides $cmdshell. $userid's place is protected by the passcode "
+  echo "$password, more info about the user here: $useridinfo"
+done < $file
