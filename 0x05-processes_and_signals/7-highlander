@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Display indefinitely and catches a SIGTERM
+# also sleep 2 times after each iteration
+trap sigtrap 15
+sigtrap()
+{
+    echo "I am invincible!!!"
+}
+while ((1))
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
