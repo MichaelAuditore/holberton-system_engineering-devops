@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# identify which ports are listening and available
+sudo netstat -p -l
