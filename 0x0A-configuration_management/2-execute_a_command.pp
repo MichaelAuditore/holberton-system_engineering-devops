@@ -2,4 +2,5 @@
 exec { 'pkill':
   command => 'pkill -f killmenow',
   path    => 'usr/bin',
+  return  => '[0,1]',
 }
