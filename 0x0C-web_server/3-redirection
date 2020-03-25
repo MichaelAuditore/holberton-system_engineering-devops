@@ -3,6 +3,6 @@
 sudo apt-get update -y
 sudo apt-get install nginx -y
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-new_string="server_name _;\n\trewrite ^\/redirect_me https://michaelauditore.github.io permanent;"
+new_string="server_name _;\n\trewrite ^\/redirect_me michaelauditore.github.io permanent;"
 sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
 service nginx start
