@@ -1,14 +1,14 @@
 # Manifest that configures NGINX
 exec { 'cmd_0':
   path    => '/usr/bin:/bin',
-  command => 'sudo sudo apt-get update -y',
+  command => 'sudo apt-get -y update',
   returns => [0,1]
 }
 
 exec { 'cmd_1':
   require => Exec['cmd_0'],
   path    => '/usr/bin:/bin',
-  command => 'sudo apt-get install nginx -y',
+  command => 'sudo apt-get -y install nginx',
   returns => [0,1]
 }
 
