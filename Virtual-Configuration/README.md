@@ -8,17 +8,17 @@
 
     You can find next packages:
 
-    	Betty
-	Shellcheck
-	gcc
-	mysql5.7
-	pip3
-	pep8
-	ruby
-	MySQLdb
-	SQLAlchemy
-	valgrind
-	git
-	emacs
-	puppet-lint
-	puppet
+    	    Betty
+	    Shellcheck
+	    gcc
+	    mysql5.7
+	    pip3
+	    pep8
+	    ruby
+	    MySQLdb
+	    SQLAlchemy
+	    valgrind
+	    git
+	    emacs & Betty Style
+	    puppet-lint
+	    puppet
