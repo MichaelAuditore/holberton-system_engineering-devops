@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+## Script to update system
+sudo apt-get update -y
+## Script to Install git
+sudo apt-get install -y git
+## Script to Install emacs
+sudo apt-get install -y emacs
+## Script to Install Betty
+git clone https://github.com/holbertonschool/Betty.git
+./Betty/install.sh
+rm -rf /Betty
+## Config Betty in emacs
+echo -e "(setq c-default-style \"bsd\"" >> ~/.emacs
+echo -e "\tc-basic-offset 8" >> ~/.emacs
+echo -e "\ttab-width 8" >> ~/.emacs
+echo -e "\tindent-tabs-mode t)" >> ~/.emacs
+echo -e "(require 'whitespace)" >> ~/.emacs
+echo -e "(setq whitespace-style '(face empty lines-tail trailing))" >> ~/.emacs
+echo -e "(global-whitespace-mode t)" >> ~/.emacs
+echo -e "(setq column-number-mode t)" >> ~/.emacs
+## Install shellcheck
+sudo apt-get install -y shellcheck
+## Install gcc
+sudo apt-get install -y gcc
+## Install pip3
+sudo apt-get install -y python3-pip
+## Install pep8
+sudo pip3 install -y pep8
+## Install valgrind
+sudo apt-get install -y valgrind
+## Install Ruby
+sudo apt-get install -y ruby
+## Install puppet-lint
+sudo gem install puppet-lint -v 2.1.1
+## Install puppet
+sudo apt-get install -y puppet facter
+## Install MySQL 5.7
+echo 'deb http://repo.mysql.com/apt/ubuntu/ trusty mysql-5.7-dmr' | sudo tee -a /etc/apt/sources.list
+sudo apt-get update -y
+sudo apt-get install -y mysql-server-5.7
+## Install MySQLdb
+sudo apt-get install -y python3-dev
+sudo apt-get install -y libmysqlclient-dev
+sudo apt-get install -y zlib1g-dev
+sudo pip3 install mysqlclient==1.3.10
+## Install SQLAlchemy
+pip3 install SQLAlchemy==1.2.5
