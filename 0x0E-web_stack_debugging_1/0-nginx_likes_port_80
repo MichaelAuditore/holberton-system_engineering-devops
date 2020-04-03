@@ -2,4 +2,4 @@
 # Script to configure page to show in listening port 80
 sudo sed -i "s/listen 8080/listen 80/" /etc/nginx/sites-enabled/default
 sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
-service nginx restart
+sudo service nginx restart
