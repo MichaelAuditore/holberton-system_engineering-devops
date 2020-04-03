@@ -15,7 +15,7 @@ exec { 'cmd_1':
 exec { 'cmd_2':
   require => Exec['cmd_1'],
   path    => '/usr/bin:/bin',
-  command => 'sed -i "29i \ \tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf'
+  command => 'sudo sed -i "29i \ \tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf'
   returns => [0,1]
 }
 
