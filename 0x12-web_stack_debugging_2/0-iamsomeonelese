@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script to know what user i'm using with a param
+if [ $# -eq 1 ]
+then
+    sudo -u "$1" whoami
+fi
