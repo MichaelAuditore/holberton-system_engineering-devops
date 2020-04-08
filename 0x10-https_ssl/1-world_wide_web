@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Function to print info about a domain name and subdomains
+
+printinfo() {
+    if [[ -n "$2" ]]
+    then
+	dig "$2.$1" | grep -A1 "ANSWER SECTION:" | paste - - | awk -v dns="$2" '{print "The subdomain " dns " is a " $7 " record and points to " $8}'
+    else
+	dig "www.$1" | grep -A1 "ANSWER SECTION:" | paste - - | awk -v dns="www" '{print "The subdomain " dns " is a " $7 " record and points to " $8}'
+	dig "lb-01.$1" | grep -A1 "ANSWER SECTION:" | paste - - | awk -v dns="lb-01" '{print "The subdomain " dns " is a " $7 " record and points to " $8}'
+	dig "web-01.$1" | grep -A1 "ANSWER SECTION:" | paste - - | awk -v dns="web-01" '{print "The subdomain " dns " is a " $7 " record and points to " $8}'
+	dig "web-02.$1" | grep -A1 "ANSWER SECTION:" | paste - - | awk -v dns="web-02" '{print "The subdomain " dns " is a " $7 " record and points to " $8}'
+    fi
+}
+
+printinfo "$1" "$2"
