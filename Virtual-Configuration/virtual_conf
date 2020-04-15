@@ -7,7 +7,9 @@ sudo apt-get install -y git
 sudo apt-get install -y emacs
 ## Script to Install Betty
 git clone https://github.com/holbertonschool/Betty.git
-./Betty/install.sh
+cd Betty
+sudo ./install.sh
+cd ..
 rm -rf /Betty
 ## Config Betty in emacs
 echo -e "(setq c-default-style \"bsd\"" >> ~/.emacs
