@@ -2,5 +2,5 @@
 # Script to execute nginx with user nginx
 chmod 204 /etc/nginx/nginx.conf
 sed -i "s/80/8080/" /etc/nginx/sites-available/default
-kill -f apache2
+pkill -f apache2
 sudo -u nginx service nginx start
