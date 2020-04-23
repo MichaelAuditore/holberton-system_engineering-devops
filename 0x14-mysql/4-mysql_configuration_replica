@@ -25,6 +25,7 @@ socket          = /var/run/mysqld/mysqld.sock
 nice            = 0
 
 [mysqld]
+replicate-do-db = tyrell_corp
 #
 # * Basic Settings
 #
