@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script to generate a backup and a compress file with the backup
+date=$(date +'%d-%m-%Y')
+mysqldump --all-databases --single-transaction --user=root --password="$1" > backup.sql
+tar -czvf "$date".tar.gz backup.sql
