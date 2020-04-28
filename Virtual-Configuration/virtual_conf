@@ -10,7 +10,7 @@ git clone https://github.com/holbertonschool/Betty.git
 cd Betty
 sudo ./install.sh
 cd ..
-rm -rf /Betty
+sudo rm -rf /Betty
 ## Config Betty in emacs
 echo -e "(setq c-default-style \"bsd\"" >> ~/.emacs
 echo -e "\tc-basic-offset 8" >> ~/.emacs
@@ -27,7 +27,7 @@ sudo apt-get install -y gcc
 ## Install pip3
 sudo apt-get install -y python3-pip
 ## Install pep8
-sudo pip3 install -y pep8
+sudo pip3 install pep8
 ## Install valgrind
 sudo apt-get install -y valgrind
 ## Install Ruby
@@ -54,10 +54,10 @@ sudo apt-get install libssl-dev
 sudo apt-get install build-essential
 sudo apt-get install python3.4-dev
 sudo apt-get install libpython3-dev
-pip3 install pyparsing
-pip3 install appdirs
-pip3 install setuptools==40.1.0
-pip3 install cryptography==2.8
-pip3 install Fabric3==1.14.post1
+sudo pip3 install pyparsing
+sudo pip3 install appdirs
+sudo pip3 install setuptools==40.1.0
+sudo pip3 install cryptography==2.8
+sudo pip3 install Fabric3==1.14.post1
 ## Install Flask and libraries as Jinja
-pip3 install Flask
+sudo pip3 install Flask
