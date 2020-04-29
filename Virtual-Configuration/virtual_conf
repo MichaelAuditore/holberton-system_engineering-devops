@@ -61,3 +61,5 @@ sudo pip3 install cryptography==2.8
 sudo pip3 install Fabric3==1.14.post1
 ## Install Flask and libraries as Jinja
 sudo pip3 install Flask
+## Install CORS
+pip3 install flask_cors
