@@ -18,5 +18,5 @@ with open(sys.argv[1] + '.json', "w") as f:
             new_dict['completed'] = todo.get('completed')
             new_dict['username'] = username
             new_list.append(new_dict)
-    json.dump({sys.argv[1]:new_list}, f)
+    json.dump({sys.argv[1]: new_list}, f)
 f.closed
