@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Print some Employee Data getting info from an API"""
 import requests
