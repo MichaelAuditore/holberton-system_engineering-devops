@@ -4,6 +4,10 @@ import requests
 import sys
 
 if __name__ == "__main__":
+    try:
+        id = int(sys.argv[1])
+    except:
+        exit()
     url = 'https://jsonplaceholder.typicode.com'
     name = requests.get(url + '/users/' + sys.argv[1]).json().get('name')
     todos = requests.get(url + '/todos').json()
