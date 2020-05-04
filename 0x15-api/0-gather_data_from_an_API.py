@@ -1,27 +1,39 @@
+
 #!/usr/bin/python3
-"""Script to do a GET request to get Employee Data from an API"""
+"""Print some Employee Data getting info from an API"""
 import requests
 import sys
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     try:
-        id = int(sys.argv[1])
+        user_id = int(sys.argv[1])
     except:
         exit()
     url = 'https://jsonplaceholder.typicode.com'
+    req = requests.get(url + '/users?id=' + sys.argv[1])
+
     try:
-        name = requests.get(url + '/users/' + sys.argv[1]).json().get('name')
-        todos = requests.get(url + '/todos').json()
-    except ValueError:
+        data = req.json()
+        username = data[0].get('name')
+    except:
         print("Not a valid JSON")
-    ntasks = 0
-    rtasks = 0
-    for todo in todos:
-        if todo.get('userId') == int(sys.argv[1]):
-            ntasks += 1
-        if (todo.get('completed') and todo.get('userId') == int(sys.argv[1])):
-            rtasks += 1
-    print('Employee {} is done with tasks({}/{}):'.format(name, rtasks, ntasks))
-    for todo in todos:
-        if (todo.get('completed') and todo.get('userId') == int(sys.argv[1])):
-            print('\t{}'.format(todo.get('title')))
+
+    req = requests.get(url + '/todos?userId=' + sys.argv[1])
+
+    try:
+        todos = req.json()
+        ntasks = 0
+        tasks = []
+
+        for task in todos:
+            if task.get('completed') is True:
+                ntasks += 1
+                tasks.append(task.get('title'))
+    except:
+        print("Not a valid JSON")
+
+    print("Employee {} is done with tasks({}/{}):".format(username,
+                                                          ntasks,
+                                                          len(todos)))
+    for title in tasks:
+        print("\t {}".format(title))
