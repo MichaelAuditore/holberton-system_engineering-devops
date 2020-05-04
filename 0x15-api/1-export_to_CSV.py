@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Script to do a GET request to get Employee
 Data from an API and converts to CSV"""
+import csv
 import requests
 import sys
-import csv
+
 
 if __name__ == '__main__':
     url = 'https://jsonplaceholder.typicode.com'
