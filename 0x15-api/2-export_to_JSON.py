@@ -7,7 +7,8 @@ import sys
 
 if __name__ == '__main__':
     url = 'https://jsonplaceholder.typicode.com'
-    username = requests.get(url + '/users/' + sys.argv[1]).json().get('username')
+    username = requests.get(url + '/users/' + sys.argv[1]).json()
+    username = username.get('username')
     todos = requests.get(url + '/todos').json()
     new_list = []
     with open(sys.argv[1] + '.json', "w") as f:
