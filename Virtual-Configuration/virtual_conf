@@ -63,3 +63,8 @@ sudo pip3 install Fabric3==1.14.post1
 sudo pip3 install Flask
 ## Install CORS
 pip3 install flask_cors
+## Install NodeJS 10
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+## Install semi-standard
+sudo npm install semistandard --global
