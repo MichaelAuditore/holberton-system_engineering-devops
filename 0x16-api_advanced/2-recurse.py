@@ -17,8 +17,11 @@ def recurse(subreddit, hot_list=[], after=None, time=0):
             return hot_list
         else:
             time += 1
-            result = recurse(subreddit, hot_list, after, time)
+            recurse(subreddit, hot_list, after, time)
     else:
-        return (None)
+        if hot_list is None:
+            return (None)
+        else:
+            return (hot_list)
 
     return hot_list
