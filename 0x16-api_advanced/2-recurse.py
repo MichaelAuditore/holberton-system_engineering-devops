@@ -9,9 +9,11 @@ def recurse(subreddit, hot_list=[], after=None, time=0):
     header = {'user-agent': 'miguel/0.0.1'}
     req = requests.get(URL, headers=header, allow_redirects=False,
                            params={'after': str(after)})
+
     if req.status_code == 200:
         data = req.json()
-        hot_list += data['data']['children']
+        if data:
+            hot_list += data['data']['children']
         after = data['data']['after']
         if not after:
             return hot_list
@@ -19,9 +21,6 @@ def recurse(subreddit, hot_list=[], after=None, time=0):
             time += 1
             recurse(subreddit, hot_list, after, time)
     else:
-        if hot_list is None:
-            return (None)
-        else:
-            return (hot_list)
+        return (None)
 
     return hot_list
