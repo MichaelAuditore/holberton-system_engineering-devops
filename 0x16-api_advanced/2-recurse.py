@@ -12,8 +12,9 @@ def recurse(subreddit, hot_list=[], after=None, time=0):
 
     if req.status_code == 200:
         data = req.json()
-        if data:
-            hot_list += data['data']['children']
+        items = data['data']['children']
+        if len(items) > 0:
+            hot_list += items
         after = data['data']['after']
         if not after:
             return hot_list
