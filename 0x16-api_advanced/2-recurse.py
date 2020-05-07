@@ -8,7 +8,7 @@ def recurse(subreddit, hot_list=[], after=None, time=0):
     URL = 'https://www.reddit.com/r/' + subreddit + '/hot.json'
     header = {'user-agent': 'miguel/0.0.1'}
     req = requests.get(URL, headers=header, allow_redirects=False,
-                           params={'after': str(after)})
+                       params={'after': str(after)})
 
     if req.status_code == 200:
         data = req.json()
