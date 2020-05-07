@@ -11,7 +11,7 @@ def recurse(subreddit, hot_list=[], after=None, time=0):
                            params={'after': str(after)})
     if req.status_code == 200:
         data = req.json()
-        hot_list += [item for item in data['data']['children']]
+        hot_list += data['data']['children']
         after = data['data']['after']
         if not after:
             return hot_list
