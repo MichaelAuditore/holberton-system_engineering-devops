@@ -4,7 +4,7 @@ invalid subreddit should return an Empty list"""
 import requests
 
 
-def count_words(subreddit, word_list, after=None, dic={}, item=0):
+def count_words(subreddit, word_list, after=None, dic=None, item=0):
     """Print a list of words with the respective times appears into a string"""
     if item < 1:
         dic = {i: 0 for i in word_list}
