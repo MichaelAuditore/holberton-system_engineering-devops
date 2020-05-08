@@ -33,4 +33,4 @@ def count_words(subreddit, word_list, after=None, dic={}, item=0):
                 if (item[1] > 0):
                     print('{}: {}'.format(item[0], item[1]))
     else:
-        print('\n')
+        print('')
