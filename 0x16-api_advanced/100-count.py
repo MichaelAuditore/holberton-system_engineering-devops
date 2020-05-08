@@ -2,10 +2,10 @@
 """Return a list for all hot post in a given subreddit in REDDIT's API,
 invalid subreddit should return an Empty list"""
 import requests
-from collections import OrderedDict
 
 
 def count_words(subreddit, word_list, after=None, dic={}, item=0):
+    """Print a list of words with the respective times appears into a string"""
     if item < 1:
         dic = {i: 0 for i in word_list}
 
@@ -17,7 +17,7 @@ def count_words(subreddit, word_list, after=None, dic={}, item=0):
     if req.status_code == 200:
         data = req.json()
         items = data['data']['children']
-        titles = [item['data']['title'] for item in items]
+        titles = list(map(lambda x: x.get('data').get('title'), items))
         after = data['data']['after']
         for title in titles:
             title = title.split(' ')
