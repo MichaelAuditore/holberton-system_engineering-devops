@@ -19,17 +19,18 @@ def count_words(subreddit, word_list, after=None, dic={}, item=0):
         items = data['data']['children']
         titles = [item['data']['title'] for item in items]
         after = data['data']['after']
-
         for title in titles:
-            for word in word_list:
-                dic[word] += title.count(word)
-
+            title = title.split(' ')
+            for sb in title:
+                for word in word_list:
+                    if sb.lower() == word.lower():
+                        dic[word] += 1
         if after:
             count_words(subreddit, word_list, after, dic, item + 1)
         else:
-            dic = dict(sorted(dic.items(), reverse=True))
-            for key, value in dic.items():
-                if value > 0:
-                    print('{}: {}'.format(key, value))
+            dic = sorted(dic.items(), key=lambda x: x[1], reverse=True)
+            for item in dic:
+                if (item[1] > 0):
+                    print('{}: {}'.format(item[0], item[1]))
     else:
         print('\n')
