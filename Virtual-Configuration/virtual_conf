@@ -68,3 +68,5 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ## Install semi-standard
 sudo npm install semistandard --global
+## Optional Installation of datadog-agent
+## DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=1d6fb72a517c45b397e45a85418fe705 bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
